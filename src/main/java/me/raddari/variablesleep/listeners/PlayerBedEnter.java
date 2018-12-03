@@ -1,10 +1,9 @@
 package me.raddari.variablesleep.listeners;
 
-import me.raddari.variablesleep.configurations.DefaultConfig;
 import me.raddari.variablesleep.VariableSleep;
+import me.raddari.variablesleep.configurations.DefaultConfig;
 import me.raddari.variablesleep.util.MiscUtil;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,8 +11,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public final class PlayerBedEnter implements Listener{
 	

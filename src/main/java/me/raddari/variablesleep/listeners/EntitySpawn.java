@@ -1,7 +1,7 @@
 package me.raddari.variablesleep.listeners;
 
-import me.raddari.variablesleep.configurations.DefaultConfig;
 import me.raddari.variablesleep.VariableSleep;
+import me.raddari.variablesleep.configurations.DefaultConfig;
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;

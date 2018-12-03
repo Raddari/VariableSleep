@@ -1,0 +1,11 @@
+name: VariableSleep
+version: ${project.version}
+main: me.raddari.variablesleep.VariableSleep
+api-version: 1.13
+authors: [Raddari]
+description: A plugin designed to let you change many aspects of sleeping
+commands:
+  variablesleep:
+    description: Reloads the config file
+    usage: /variablesleep reload
+    aliases: [vs]

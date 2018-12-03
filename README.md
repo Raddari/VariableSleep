@@ -39,6 +39,9 @@ Certain variables can also be inserted into the message. Currently, these are:
 - [x] Message individual players rather than server-wide broadcast (v1.0.1)
 - [ ] Message when someone leaves their bed
 
+### Download
+[Latest release.](https://github.com/Raddari/VariableSleep/releases/latest)
+
 Suggestions and bug reports are of course, always welcome!
 
 *This plugin mas made using Paper-API, and therefore not supported on Spigot servers.*

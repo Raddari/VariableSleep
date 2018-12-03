@@ -30,10 +30,11 @@ public final class PlayerBedEnter implements Listener{
 			
 			String msg = MiscUtil.format(DefaultConfig.announceSleeping())
 								 .replace("[player]", event.getPlayer().getDisplayName())
-								 .replace("[asleep]", String.valueOf(sleeping))
 								 .replace("[online]", String.valueOf(online))
+								 .replace("[asleep]", String.valueOf(sleeping))
+								 .replace("[asleep%]", String.valueOf(sleepingPercent))
 								 .replace("[required]", String.valueOf(required))
-								 .replace("[asleep%]", String.valueOf(sleepingPercent));
+								 .replace("[required%]", String.valueOf(DefaultConfig.sleepPercent()));
 			
 			MiscUtil.messagePlayers(players, msg);
 			

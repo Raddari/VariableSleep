@@ -1,7 +1,9 @@
 package me.raddari.variablesleep.util;
 
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 
+import java.util.List;
 import java.util.Map;
 
 public final class MiscUtil{
@@ -22,6 +24,12 @@ public final class MiscUtil{
 			return true;
 		}
 		return false;
+	}
+	
+	public static <T extends Player> void messagePlayers(List<T> players, String message){
+		for(T player : players){
+			player.sendMessage(message);
+		}
 	}
 	
 	public static String format(String text){

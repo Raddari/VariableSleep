@@ -34,7 +34,8 @@ public final class PlayerBedEnter implements Listener{
 														.replace("[player]", player.getDisplayName())
 														.replace("[asleep]", String.valueOf(sleeping))
 														.replace("[online]", String.valueOf(online))
-														.replace("[required]", String.valueOf(required)));
+														.replace("[required]", String.valueOf(required))
+														.replace("[asleep%]", String.valueOf(sleepingPercent)));
 			
 			if(sleepingPercent >= DefaultConfig.sleepPercent()){
 				world.setTime(DefaultConfig.timeSet());

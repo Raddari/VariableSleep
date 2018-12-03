@@ -50,7 +50,4 @@ public final class PlayerBedEnter implements Listener{
 			VariableSleep.fixWorldMap(world);
 		}
 	}
-	
-	
-	
 }

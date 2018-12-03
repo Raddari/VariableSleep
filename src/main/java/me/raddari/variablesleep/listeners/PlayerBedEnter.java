@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -19,27 +20,29 @@ public final class PlayerBedEnter implements Listener{
 	@EventHandler
 	public void onPlayerBedEnter(PlayerBedEnterEvent event){
 		if(event.getBedEnterResult() == PlayerBedEnterEvent.BedEnterResult.OK){
-			Player player = event.getPlayer();
-			World world = player.getWorld();
+			World world = event.getPlayer().getWorld();
 			
 			// Increment the amount of sleeping players in the world
 			MiscUtil.modifyMapCount(VariableSleep.worlds, world, 1);
 			
-			int online = Bukkit.getServer().getWorld(world.getName()).getPlayerCount();
+			List<Player> players = Bukkit.getServer().getWorld(world.getName()).getPlayers();
+			int online = players.size();
 			int sleeping = VariableSleep.worlds.get(world);
 			float sleepingPercent = (float) sleeping / online;
 			int required = Math.round(online * DefaultConfig.sleepPercent());
 			
-			Bukkit.getServer().broadcastMessage(MiscUtil.format(DefaultConfig.announceSleeping())
-														.replace("[player]", player.getDisplayName())
-														.replace("[asleep]", String.valueOf(sleeping))
-														.replace("[online]", String.valueOf(online))
-														.replace("[required]", String.valueOf(required))
-														.replace("[asleep%]", String.valueOf(sleepingPercent)));
+			String msg = MiscUtil.format(DefaultConfig.announceSleeping())
+								 .replace("[player]", event.getPlayer().getDisplayName())
+								 .replace("[asleep]", String.valueOf(sleeping))
+								 .replace("[online]", String.valueOf(online))
+								 .replace("[required]", String.valueOf(required))
+								 .replace("[asleep%]", String.valueOf(sleepingPercent));
+			
+			MiscUtil.messagePlayers(players, msg);
 			
 			if(sleepingPercent >= DefaultConfig.sleepPercent()){
 				world.setTime(DefaultConfig.timeSet());
-				Bukkit.getServer().broadcastMessage(MiscUtil.format(DefaultConfig.wakeUpText()));
+				MiscUtil.messagePlayers(players, MiscUtil.format(DefaultConfig.wakeUpText()));
 			}
 			if(DefaultConfig.clearWeather()){
 				world.setThundering(false);
@@ -49,4 +52,7 @@ public final class PlayerBedEnter implements Listener{
 			VariableSleep.fixWorldMap(world);
 		}
 	}
+	
+	
+	
 }

@@ -14,6 +14,8 @@ import java.util.List;
 
 public final class PlayerBedEnter implements Listener {
     
+    private static long lastAnnounce = System.currentTimeMillis();
+    
     @EventHandler
     public void onPlayerBedEnter(PlayerBedEnterEvent event) {
         if (event.getBedEnterResult() == PlayerBedEnterEvent.BedEnterResult.OK) {
@@ -36,8 +38,9 @@ public final class PlayerBedEnter implements Listener {
                                  .replace("[required]", String.valueOf(required))
                                  .replace("[required%]", String.valueOf(DefaultConfig.sleepPercent()));
             
-            MiscUtil.messagePlayers(players, msg);
-            
+            if (System.currentTimeMillis() - lastAnnounce > DefaultConfig.announceTimeout()) {
+                MiscUtil.messagePlayers(players, msg);
+            }
             if (sleepingPercent >= DefaultConfig.sleepPercent()) {
                 world.setTime(DefaultConfig.timeSet());
                 MiscUtil.messagePlayers(players, MiscUtil.format(DefaultConfig.wakeUpText()));

@@ -11,6 +11,7 @@ public final class DefaultConfig {
     private static final String TIME_SET = "features.time-set";
     
     private static final String ANNOUNCE_SLEEPING = "messages.announce-sleeping";
+    private static final String ANNOUNCE_TIMEOUT = "messages.timeout";
     private static final String WAKE_UP_TEXT = "messages.wake-up-text";
     
     public static void init() {
@@ -20,6 +21,7 @@ public final class DefaultConfig {
         config().addDefault(TIME_SET, 500L);
         
         config().addDefault(ANNOUNCE_SLEEPING, "&6[player] is now sleeping ([asleep]/[online]). [required] required to sleep.");
+        config().addDefault(ANNOUNCE_TIMEOUT, 1000L);
         config().addDefault(WAKE_UP_TEXT, "&6Wakey wakey!");
         
         config().options().copyDefaults(true);
@@ -46,6 +48,10 @@ public final class DefaultConfig {
     
     public static String announceSleeping() {
         return config().getString(ANNOUNCE_SLEEPING);
+    }
+    
+    public static long announceTimeout() {
+        return config().getLong(ANNOUNCE_TIMEOUT);
     }
     
     public static String wakeUpText() {

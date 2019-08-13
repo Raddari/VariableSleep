@@ -1,8 +1,10 @@
 # Changelog
 
-## [Unreleased]
+## [1.0.3] - 2019/08/13
 ### Added
-- Message when someone leaves their bed.
+- Timeout config to prevent message spam
+### Changed
+- Support for Minecraft 1.14.4
 
 ## [1.0.1] - 2018/12/04
 ### Added

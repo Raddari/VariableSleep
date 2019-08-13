@@ -60,8 +60,8 @@ public final class VariableSleep extends JavaPlugin {
     }
     
     public static void fixWorldMap(World world) {
-		if (VariableSleep.WORLDS.get(world) < 0) {
-			VariableSleep.WORLDS.put(world, 0);
+		if (WORLDS.get(world) < 0) {
+			WORLDS.put(world, 0);
 		}
     }
     

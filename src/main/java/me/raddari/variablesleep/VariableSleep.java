@@ -21,7 +21,6 @@ public final class VariableSleep extends JavaPlugin {
     public static final String PREFIX = "&7[&6VariableSleep&7]";
     
     private static VariableSleep instance;
-    public final Logger logger = getLogger();
     
     public VariableSleep() {
         super();

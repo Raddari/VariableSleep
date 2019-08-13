@@ -1,7 +1,7 @@
 name: VariableSleep
 version: ${project.version}
 main: me.raddari.variablesleep.VariableSleep
-api-version: 1.13
+api-version: "1.14.4"
 authors: [Raddari]
 description: ${project.description}
 commands:

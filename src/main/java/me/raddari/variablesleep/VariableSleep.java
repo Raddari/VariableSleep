@@ -13,11 +13,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 public final class VariableSleep extends JavaPlugin {
     
-    public static final Map<World, Integer> worlds = new HashMap<>();
+    public static final Map<World, Integer> WORLDS = new HashMap<>();
     public static final String PREFIX = "&7[&6VariableSleep&7]";
     
     private static VariableSleep instance;
@@ -33,7 +32,7 @@ public final class VariableSleep extends JavaPlugin {
         DefaultConfig.init();
         
         for (World w : Bukkit.getServer().getWorlds()) {
-            worlds.put(w, 0);
+            WORLDS.put(w, 0);
         }
         
         getCommand("variablesleep").setExecutor(new CommandHandler());
@@ -45,7 +44,7 @@ public final class VariableSleep extends JavaPlugin {
         for (Player p : Bukkit.getServer().getOnlinePlayers()) {
             p.damage(0.00001D);
         }
-        worlds.clear();
+        WORLDS.clear();
     }
     
     private void setupListeners() {
@@ -61,8 +60,8 @@ public final class VariableSleep extends JavaPlugin {
     }
     
     public static void fixWorldMap(World world) {
-		if (VariableSleep.worlds.get(world) < 0) {
-			VariableSleep.worlds.put(world, 0);
+		if (VariableSleep.WORLDS.get(world) < 0) {
+			VariableSleep.WORLDS.put(world, 0);
 		}
     }
     

@@ -20,11 +20,11 @@ public final class PlayerBedEnter implements Listener {
             World world = event.getPlayer().getWorld();
             
             // Increment the amount of sleeping players in the world
-            MiscUtil.modifyMapCount(VariableSleep.worlds, world, 1);
+            MiscUtil.modifyMapCount(VariableSleep.WORLDS, world, 1);
             
             List<Player> players = Bukkit.getServer().getWorld(world.getName()).getPlayers();
             int online = players.size();
-            int sleeping = VariableSleep.worlds.get(world);
+            int sleeping = VariableSleep.WORLDS.get(world);
             float sleepingPercent = (float) sleeping / online;
             int required = Math.round(online * DefaultConfig.sleepPercent());
             

@@ -12,7 +12,7 @@ public final class PlayerBedLeave implements Listener {
     @EventHandler
     public void onPlayerBedLeave(PlayerBedLeaveEvent event) {
         World world = event.getPlayer().getWorld();
-        MiscUtil.modifyMapCount(VariableSleep.worlds, world, -1);
+        MiscUtil.modifyMapCount(VariableSleep.WORLDS, world, -1);
         VariableSleep.fixWorldMap(world);
     }
     

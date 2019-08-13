@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 public final class VariableSleep extends JavaPlugin {
     
     public static final Map<World, Integer> worlds = new HashMap<>();
+    public static final String PREFIX = "&7[&6VariableSleep&7]";
     
     private static VariableSleep instance;
     public final Logger logger = getLogger();
@@ -70,7 +71,4 @@ public final class VariableSleep extends JavaPlugin {
         return instance;
     }
     
-    public static String prefix() {
-        return "&7[&6VariableSleep&7]";
-    }
 }

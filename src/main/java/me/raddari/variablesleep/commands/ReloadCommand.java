@@ -8,7 +8,7 @@ public class ReloadCommand {
     
     public static void reloadConfig(CommandSender sender) {
         VariableSleep.instance().reloadConfig();
-        sender.sendMessage(MiscUtil.format(VariableSleep.prefix() + " &aConfig reloaded!"));
+        sender.sendMessage(MiscUtil.format(VariableSleep.PREFIX + " &aConfig reloaded!"));
     }
     
 }

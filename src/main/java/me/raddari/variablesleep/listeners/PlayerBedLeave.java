@@ -7,13 +7,13 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerBedLeaveEvent;
 
-public final class PlayerBedLeave implements Listener{
-	
-	@EventHandler
-	public void onPlayerBedLeave(PlayerBedLeaveEvent event){
-		World world = event.getPlayer().getWorld();
-		MiscUtil.modifyMapCount(VariableSleep.worlds, world, -1);
-		VariableSleep.fixWorldMap(world);
-	}
-	
+public final class PlayerBedLeave implements Listener {
+    
+    @EventHandler
+    public void onPlayerBedLeave(PlayerBedLeaveEvent event) {
+        World world = event.getPlayer().getWorld();
+        MiscUtil.modifyMapCount(VariableSleep.worlds, world, -1);
+        VariableSleep.fixWorldMap(world);
+    }
+    
 }

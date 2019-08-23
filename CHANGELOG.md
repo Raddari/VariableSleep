@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.4] - 2019/08/24
+### Bugfixes
+- Changed incorrect API version
+
 ## [1.0.3] - 2019/08/13
 ### Added
 - Timeout config to prevent message spam
